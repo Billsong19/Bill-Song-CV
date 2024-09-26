@@ -30,3 +30,23 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+      run: pwd
+  htmltopdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cache wkhtmltopdf
+        uses: actions/cache@v3
+        with:
+          path: /usr/bin/wkhtmltopdf
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: apt list
+        continue-on-error: true
+        - run: apt list
+      - name: install wkhtmltopdf dependency
+        - run: sudo apt-get install wkhtmltopdf
+      - name: convert CV to pdf
+        - run: wkhtmltopdf --enable-local-file-access -q -n --log-level info --images --page-size A4 Bill-Song-CV.html ./Bill-Song-CV-${{ github.ref }}.pdf
+        - uses: actions/upload-artifact@v4
+          with: 
+          name: CV pdf
+          path: ./Bill-Song-CV-${{ github.ref }}.pdf
