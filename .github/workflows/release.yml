@@ -34,10 +34,6 @@ jobs:
   htmltopdf:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: apt list
-        continue-on-error: true
-        - run: apt list
       - name: install wkhtmltopdf dependency
         - run: sudo apt-get install wkhtmltopdf
       - name: convert CV to pdf
