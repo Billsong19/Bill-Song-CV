@@ -34,11 +34,11 @@ jobs:
   htmltopdf:
     runs-on: ubuntu-latest
     steps:
-      - name: install wkhtmltopdf dependency
-        - run: sudo apt-get install wkhtmltopdf
-      - name: convert CV to pdf
-        - run: wkhtmltopdf --enable-local-file-access -q -n --log-level info --images --page-size A4 Bill-Song-CV.html ./Bill-Song-CV-${{ github.ref }}.pdf
-        - uses: actions/upload-artifact@v4
-          with: 
-          name: CV pdf
-          path: ./Bill-Song-CV-${{ github.ref }}.pdf
+    - name: install wkhtmltopdf dependency
+      - run: sudo apt-get install wkhtmltopdf
+    - name: convert CV to pdf
+      - run: wkhtmltopdf --enable-local-file-access -q -n --log-level info --images --page-size A4 Bill-Song-CV.html ./Bill-Song-CV-${{ github.ref }}.pdf
+      - uses: actions/upload-artifact@v4
+        with: 
+        name: CV pdf
+        path: ./Bill-Song-CV-${{ github.ref }}.pdf
