@@ -1,0 +1,64 @@
+/* General setup */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src: url('../assets/MaterialSymbolsOutlined-VariableFont_FILL\,GRAD\,opsz\,wght.ttf') format('truetype');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; */
+}
+
+html {
+  font-size: 10px;
+  margin: 0;
+  font-family: "DM Sans";
+}
+
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+  padding-top: 0.25em;
+}
+
+h1,
+h2 {
+  font-family: 'DM Sans', sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.flex {
+  display: -webkit-box;
+  display: flex
+}
+
+.right-align {
+  text-align: right;
+}
